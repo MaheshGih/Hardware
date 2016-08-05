@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<section xmlns:th="http://www.thymeleaf.org">
+<p th:inline="text">Edit Command Object : [[${editCommand}]]</p>
+<body>
+<form method="post" th:object="${editCommand}">
+             <address th:each="userAddress : *{userAddresses}">
+                        <input type="hidden" th:field="${userAddress.addressId}" />
+                        <br/>
+                        Address Type
+                        <br/>
+                        <label for="userStreet">Street : </label>
+                        <input type="text" th:field="${userAddress.userStreet}" />
+                        <br/>
+                        <label for="userCity">City : </label>
+                        <input type="text" th:field="${userAddress.userCity}" />
+                        <br/>
+                        <label for="userPincode">Pin Code : </label>
+                        <input type="text" th:field="${userAddress.userPincode}" />
+                        <br/>
+                </address>
+               </form>
+           </section>
+     </body> 
+</html>       
